@@ -1,0 +1,39 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>gTube - Youtube Video Downloader</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="{% static 'img/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/master.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mobile.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/fa/all.min.css' %}">
+  <script src="{% static 'vendors/bootstrap/bootstrap.min.js' %}" charset="utf-8"></script>
+  <script src="{% static 'vendors/jquery/jquery.js' %}" charset="utf-8"></script>
+  <script src="{% static 'js/app.js' %}" charset="utf-8" async></script>
+</head>
+
+<body>
+  <section>
+    <header>
+      {% include 'partials/header.html'  %}
+    </header>
+    <main class="" style="height: 94vh;">
+      {%block main %}
+
+      {% endblock main %}
+    </main>
+    <footer>
+      {% include 'partials/footer.html'  %}
+    </footer>
+  </section>
+  {# <iframe src='javascript:void(0)' id="ready" class="d-none"></iframe>#}
+  {#  <video controls id="vid">#}
+  {#      <source src="{% static 'img/test.mp4' %}">#}
+  {#  </video>#}
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+{% extends 'base/index.html' %}
+{% load static %}
+{% block main %}
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col m-auto col-lg-9 col-sm-12">
+            <div class="card bg-dark shadow rounded">
+                <div class="card-header text-center text-white-50">
+                    <h4 class="my-0 p-2">Youtube video downloader</h4>
+                </div>
+                <div class="card-body pb-0">
+                    <form action="{% url 'q' %}" class="my-3" id="vidForm" method="post">
+                        {% csrf_token %}
+                        <div class="input-group input-group-lg">
+                            {{ form.url }}
+                            <button type="submit" class="input-group-btn btn-secondary border-0"><i
+                                    class="fa fa-search mx-1"></i><span
+                                    class="d-none d-lg-inline">Search</span></button>
+                        </div>
+                    </form>
+                    <div class="download-area p-2 pb-0 mt-2 rounded ">
+                        <div class="collapse" id="searchPreloader">
+                            <div class="">
+                                <div class="text-center">
+                                    <div class="spinner-border m-1 text-success" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                    <div class="spinner-border m-1 text-success" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                    <div class="spinner-border m-1 text-success" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                    <div class="spinner-border m-1 text-success" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                    <div class="spinner-border m-1 text-success" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid collapse bg-dark" id="result">
+                            <div class="text-white-50 text-center py-2">
+                                <h5>Resultats de recherche</h5>
+                            </div>
+                            <div class="row row-cols-2 text-white">
+                                <div class="col col-5">
+                                    <div class="img-responsive h-100 w-100">
+                                        <img src="" alt="" class="h-100 w-100" style="max-height: 100%" id="vThumbnail">
+                                    </div>
+                                </div>
+                                <div class="col col-7">
+                                    <div class="video-title">
+                                        <h5><span class="fw-bold text-decoration-underline text-danger">Titre :</span>
+                                            <span style="font-family: monospace, sans-serif" id="vTitle"></span></h5>
+                                    </div>
+                                    <div class="video-nbview">
+                                        <h5><span class="fw-bold text-decoration-underline text-danger">Nombre de vue
+                                                :</span> <span style="font-family: monospace, sans-serif"
+                                                id="vView"></span></h5>
+                                    </div>
+                                    <div class="video-duration">
+                                        <h5><span class="fw-bold text-decoration-underline text-danger">Duration
+                                                :</span> <span style="font-family: monospace, sans-serif"
+                                                id="vDuration"></span></h5>
+                                    </div>
+                                    <div class="video-vRes">
+                                        <h5><span class="fw-bold text-decoration-underline text-danger">Resolution
+                                                :</span> <span style="font-family: monospace, sans-serif" id="vRes">
+                                            </span></h5>
+                                    </div>
+                                    <div class="video-rating">
+                                        <h5><span class="fw-bold text-decoration-underline text-danger">Likes :</span>
+                                            <span style="font-family: monospace, sans-serif" id="vRating"> </span></h5>
+                                    </div>
+                                    <div class="video-size">
+                                        <h5 class="col"><span
+                                                class="fw-bold text-decoration-underline text-danger">Taille :</span>
+                                            <span style="font-family: monospace, sans-serif" id="vSize"> </span> </h5>
+                                    </div>
+                                    <div class="video-format">
+                                        <label for="vidWeight" class="h5 text-danger">Selectionner le Format</label>
+                                        <select name="weight" id="vidWeight"
+                                            class="form-select text-white bg-dark "></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-desc text-white my-2 p-2 collapse"
+                                style="font-family: monospace, sans-serif" id="vidDesc">
+                                <p id="vDesc"></p>
+                            </div>
+                            <div class="my-2 text-center py-3">
+                                <button class="btn btn-secondary" data-bs-toggle="collapse"
+                                    data-bs-target="#vidDesc">Description</button>
+                                <a role="button" target="_blank" class="btn btn-success" href="javascript:void(0)"
+                                    id="download" download>Télécharger</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-end text-white-50">
+                    <h5>Powered by <a href="javascript:void(0)" class="text-white"> Kabir</a></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main %}
