@@ -8,7 +8,7 @@ A small web application for downloading youtube videos in various formats that w
 
 Install my-project with GitHub
 
-### Make sure you already have Python3 and Django<=3.2.9 installed on your machine
+### Make sure you already have Python3 and Django>=3.2.9 installed on your machine
 
 ```bash
   git clone https://github.com/BlakvGhost/gTube.git
