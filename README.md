@@ -11,21 +11,21 @@ Install gTube with GitHub
 ### Make sure you already have Python3 and Django>=3.2.9 installed on your machine
 
 ```bash
-  git clone https://github.com/BlakvGhost/gTube.git
+git clone https://github.com/BlakvGhost/gTube.git
 
 ```
 Browse in the folder
 ```bash
-    cd gTube
+cd gTube
 ```
 Install the project requirements
 ```bash
-    pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 start now the server
 
 ```bash
-    python3 manage.py runserver
+python3 manage.py runserver
 ```
     
 ## Screenshots
